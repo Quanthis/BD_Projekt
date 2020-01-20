@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>BD_Projekt</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{379aa04a-cce9-4680-ae1a-c83127a4a82a}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>BD_Projekt</RootNamespace>
+    <AssemblyName>BD_Projekt</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <GenerateCreateScript>True</GenerateCreateScript>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunSqlCodeAnalysis>True</RunSqlCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Wiedzmin.sql" />
+    <Build Include="Region.sql" />
+    <Build Include="Miejsce.sql" />
+    <Build Include="Potwory.sql" />
+    <Build Include="Eliksiry.sql" />
+    <Build Include="Postacie.sql" />
+    <Build Include="MiejsceDoRegionu.sql" />
+    <Build Include="PotworyDoEliksirow.sql" />
+    <Build Include="Wyposazenie.sql" />
+    <Build Include="Skladniki_Rzemieslnicze.sql" />
+    <Build Include="SkladnikiNaSkladniki.sql" />
+    <Build Include="Skladniki_Alchemiczne.sql" />
+    <Build Include="SkladnikiAlchnaPodskladniki.sql" />
+    <Build Include="EliksiryDoSkladnikow.sql" />
+    <Build Include="Wiedzmin_Wyposazenie.sql" />
+    <Build Include="RegionDoPotworow.sql" />
+    <Build Include="RegionDoMiasta.sql" />
+    <Build Include="WyposazenieDoSkladnikow.sql" />
+    <Build Include="Wiedzmin_Miejsce_Pochodzenia.sql" />
+    <Build Include="Wiedzmin_Szkola_Wiedzminska.sql" />
+    <Build Include="Zlecenia.sql" />
+    <Build Include="ZlecenieDoPostaci.sql" />
+    <Build Include="ZleceniaDoPotworow.sql" />
+    <Build Include="ZleceniaDoMiejsca.sql" />
+    <Build Include="Umiejetnosci.sql" />
+    <Build Include="PostacieDoUmiejetnosci.sql" />
+    <Build Include="PostacieDoMiejsca.sql" />
+    <Build Include="WiedzminDoUmiejetnosci.sql" />
+    <Build Include="PostacieDoMiejscaPochodzenia.sql" />
+    <Build Include="Miejsce_Region_1.sql" />
+    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <Build Include="Function1.sql" />
+    <Build Include="Function2.sql" />
+    <Build Include="Procedure1.sql" />
+    <Build Include="Procedure2.sql" />
+    <Build Include="Trigger1.sql" />
+    <Build Include="Trigger2.sql" />
+    <Build Include="View1_1.sql" />
+    <Build Include="Scripts\PrzykładoweZapytania.sql" />
+    <Build Include="Scripts\ZapytaniaDoFunkcjiITP.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="BD_Projekt.refactorlog" />
+  </ItemGroup>
+</Project>
